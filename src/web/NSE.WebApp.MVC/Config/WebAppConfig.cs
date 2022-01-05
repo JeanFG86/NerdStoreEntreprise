@@ -6,7 +6,9 @@ namespace NSE.WebApp.MVC.Config
     {
         public static void AddMvcConfiguration(this IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews();            
+
+            //services.Configure<AppSettings>(configuration);
         }
 
         public static void UseMvcConfiguration(this WebApplication app)
