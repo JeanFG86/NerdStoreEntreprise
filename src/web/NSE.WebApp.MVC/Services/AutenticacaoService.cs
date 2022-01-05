@@ -47,7 +47,7 @@ namespace NSE.WebApp.MVC.Services
                 "application/json"
                 );
 
-            var response = await _httpClient.PostAsync("https://localhost:44343/api/identidade/nova-conta", registroContent);
+            var response = await _httpClient.PostAsync("https://localhost:44392/api/identidade/nova-conta", registroContent);
 
             var options = new JsonSerializerOptions
             {
