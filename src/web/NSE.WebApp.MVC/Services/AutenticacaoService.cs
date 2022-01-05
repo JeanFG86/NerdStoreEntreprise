@@ -23,11 +23,6 @@ namespace NSE.WebApp.MVC.Services
 
             var response = await _httpClient.PostAsync("/api/identidade/autenticar", loginContent);
 
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-            };
-
             if (!TratarErrosResponse(response))
             {
                 return new UsuarioRespostaLogin
@@ -44,11 +39,6 @@ namespace NSE.WebApp.MVC.Services
             var registroContent = ObterConteudo(usuarioRegistro);
 
             var response = await _httpClient.PostAsync("/api/identidade/nova-conta", registroContent);
-
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-            };
 
             if (!TratarErrosResponse(response))
             {
