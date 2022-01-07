@@ -21,5 +21,10 @@ var app = builder.Build();
 
 app.UseMvcConfiguration();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute("default", "{controller=Catalogo}/{action=Index}/{id?}");
+});
+
 
 app.Run();
