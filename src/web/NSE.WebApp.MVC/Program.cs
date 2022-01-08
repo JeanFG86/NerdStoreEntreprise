@@ -14,7 +14,7 @@ var appSettings = appSettingsSection.Get<AppSettings>();
 
 builder.Services.AddMvcConfiguration();
 
-builder.Services.RegisterServices();
+builder.Services.RegisterServices(appSettings);
 
 var app = builder.Build();
 
