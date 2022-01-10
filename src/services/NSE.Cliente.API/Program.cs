@@ -1,17 +1,24 @@
-var builder = WebApplication.CreateBuilder(args);
+using NSE.Clientes.API.Config;
+using NSE.WebAPI.Core.Identidade;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddApiConfiguration(builder);
+
+builder.Services.AddJwtConfiguration(builder);
+
+builder.Services.AddSwaggerConfiguration();
+
+builder.Services.RegisterServices();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseSwaggerConfiguration();
+app.UseApiConfiguration();
 
 app.Run();
+
