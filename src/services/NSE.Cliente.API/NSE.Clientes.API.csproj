@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="EasyNetQ" Version="6.3.1" />
 	  <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
 		  <PrivateAssets>all</PrivateAssets>
@@ -30,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\building blocks\NSE.Core\NSE.Core.csproj" />
+    <ProjectReference Include="..\..\building blocks\NSE.MessageBus\NSE.MessageBus.csproj" />
     <ProjectReference Include="..\NSE.Identidade.API\NSE.Identidade.API.csproj" />
   </ItemGroup>
 

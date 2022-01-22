@@ -26,7 +26,7 @@ namespace NSE.Clientes.API.Services
             return Task.CompletedTask;
         }
 
-        private async Task<ValidationResult> RegistrarCliente(UsuarioRegistradoIntegrationEvent message)
+        private async Task<ValidationResult> RegistrarCliente(UsuarioRegistradoIntegrationEvent message )
         {
             var clienteCommand = new RegistrarClienteCommand(message.Id, message.Nome, message.Email, message.Cpf);
             ValidationResult sucesso;
