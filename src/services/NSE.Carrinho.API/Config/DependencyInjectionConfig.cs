@@ -1,12 +1,16 @@
 ﻿
+using NSE.Carrinho.API.Data;
+using NSE.WebAPI.Core.Usuario;
+
 namespace NSE.Carrinho.API.Config
 {
     public static class DependencyInjectionConfig
     {
         public static void RegisterServices(this IServiceCollection services)
         {
-            //services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            //services.AddScoped<CatalogoContext>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IAspNetUser, AspNetUser>();
+            services.AddScoped<CarrinhoContext>();
         }
     }
 }
